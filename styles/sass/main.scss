@@ -1,0 +1,99 @@
+@import "compass";
+@import "vendor/normalise.scss";
+@import "../../icomoon/style.css";
+
+/************************************************************************************************
+                     * Variables
+ ************************************************************************************************/
+
+$font-color: #333;
+$neutral: #ddd;
+
+
+/************************************************************************************************
+                     * Calendar
+ ************************************************************************************************/
+
+html, body{
+	height: 100%;
+	color: $font-color;
+}
+
+.jd-calendar{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	.calendar-header{
+		padding: 15px;
+		height: 40px;
+	}
+	.calendar-title{
+		font-size: 32px;
+	}
+	.month-name{
+		font-weight: bold;
+		display: inline-block;
+	}
+	.navigation{
+		font-size: 13px;
+		float: right;
+		div{
+			display: inline-block;
+			padding: 10px;
+			border-radius: 4px;
+			vertical-align: middle;
+			border: 1px solid $neutral;
+			cursor: pointer;
+			&:hover{
+				background-color: #f1f1f1;
+			}
+		}
+		[class^="icon-"], [class*=" icon-"] {
+			font-size: 15px;
+		}
+		.today{
+			margin: 0 2px;
+		}
+	}
+	.calendar{
+		flex: 1;
+	}
+	.month-table{
+		height: 100%;
+		display: table;
+		width: 100%;
+		border-collapse: collapse;
+	}
+	.week{
+		display: table-row;
+		&.day-titles .day{
+			border: none;
+			background-color: transparent;
+			vertical-align: bottom;
+		}
+	}
+	.day{
+		display: table-cell;
+		width: 14.28%;
+		border: 1px solid #ddd;
+		padding: 5px;
+		&.weekend{
+			background-color: #eee;
+		}
+		.day-number{
+			padding: 4px 8px 3px;
+			display: inline-block;
+		}
+		&.today .day-number{
+			background-color: red;
+			border-radius: 20px;
+			color: white;
+		}
+		&.previous-month-day,
+		&.next-month-day{
+			color: #adadad;
+		}
+
+	}
+	
+}
